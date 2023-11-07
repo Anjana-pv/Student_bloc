@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:block_todo/api/fuctions.dart';
+import 'package:block_todo/repositaries/api/fuctions.dart';
 
 
 part 'add_event.dart';
@@ -13,7 +13,7 @@ class AddBloc extends Bloc<AddEvent, AddState> {
   }
 
   FutureOr<void> addtodo(event, Emitter<AddState> emit) async{
-   final isSucces= await Api.addtodo(event.id);
+   final isSucces= await Api.addone(event.map);
    if(isSucces){
     emit (AddTodoSuccessState());
 

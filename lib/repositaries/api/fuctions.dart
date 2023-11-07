@@ -17,7 +17,7 @@ class Api{
     }
 
   }
-  static Future<bool>adddata(Map body)async{
+  static Future<bool>addone(Map body)async{
     const url ='https://api.nstack.in/v1/todos';
     final uri=Uri.parse(url);
     final response=await http.post(uri,body: jsonEncode(body),
@@ -39,7 +39,7 @@ class Api{
 
 
 static Future<bool>deletid(String id)async{
-  const url ='https://api.nstack.in/v1/todos/6529088373e72c2ad178cb38';
+  final url ='https://api.nstack.in/v1/todos/$id';
   final uri=Uri.parse(url);
   final response=await http.delete(uri);
   return  response.statusCode==200;

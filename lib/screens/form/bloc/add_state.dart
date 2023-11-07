@@ -1,7 +1,7 @@
 part of 'add_bloc.dart';
 
 
-sealed class AddState {}
+abstract class AddState {}
 
 final class AddActonState extends AddState {}
 

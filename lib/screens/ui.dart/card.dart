@@ -5,23 +5,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class TOdoCard extends StatelessWidget {
   const TOdoCard({
     super.key,
-    required this.id,
+    required this.noteId,
     required this.todo,
   });
 
-  final String id;
+  final String noteId;
   final Map todo;
 
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context
           .read<HomeBloc>()
-          .add(UpdateNavigationEvent(id: id, map: todo)),
+          .add(UpdateNavigationEvent(id: noteId, map: todo)),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
-              color: Theme.of(context).colorScheme.inversePrimary, width: 2),
+              color: Theme.of(context).colorScheme.inversePrimary,
+              width: 2),
           borderRadius: const BorderRadius.all(
             Radius.circular(8),
           ),
@@ -35,20 +36,22 @@ class TOdoCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      todo['title'] ?? " ",
+                      todo['title'] ?? '',
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   IconButton(
                       onPressed: () {
-                        context.read<HomeBloc>().add(ShowDialogEvent());
+                        context
+                            .read<HomeBloc>()
+                            .add(ShowDialogEvent());
                       },
                       icon: const Icon(Icons.delete))
                 ],
               ),
               Flexible(
                   child: Text(
-                todo['discription'] ?? " ",
+                todo['description'] ?? '',
                 overflow: TextOverflow.fade,
               )),
             ],
@@ -58,3 +61,5 @@ class TOdoCard extends StatelessWidget {
     );
   }
 }
+
+

@@ -7,7 +7,9 @@ abstract class HomeActionsEvent extends HomeEvent{}
 
 final class FetchDataEvent extends HomeEvent{}
 
-final class FormNativeEvent extends HomeActionsEvent{}
+final class FetchScuccessEvent extends HomeActionsEvent{}
+
+final class FormNavigationEvent extends HomeActionsEvent{}
 
 final class DeleteEvent extends  HomeActionsEvent{
   final String id ;

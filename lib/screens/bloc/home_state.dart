@@ -5,13 +5,15 @@ sealed class HomeState {}
 
 abstract class HomeActions extends HomeState{}
 
+
 final class HomeInitial extends HomeState {}
 
-final class Loading extends HomeState{}
 
-final class Success extends HomeState{
+final class LoadingState extends HomeState{}
+
+final class SuccessState extends HomeState{
   List todoList=[];
-  Success ({required this.todoList});
+  SuccessState ({required this.todoList});
 
 }
 

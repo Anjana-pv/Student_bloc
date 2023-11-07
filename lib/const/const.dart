@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-final aheight =SizedBox(
+const aheight =SizedBox(
   height: 25,
 );
-final bheight=SizedBox(
+const bheight= SizedBox(
   height: 50,
 );
